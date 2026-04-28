@@ -11,15 +11,22 @@
 
 ## 📋 Table of Contents
 
-- [Features](#-features)
-- [Requirements](#-requirements)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Database Setup](#-database-setup)
-- [Commands](#-commands)
-- [Project Structure](#-project-structure)
-- [Support](#-support)
-- [License](#-license)
+- [🎙️ TempVoc](#️-tempvoc)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [✨ Features](#-features)
+  - [📦 Requirements](#-requirements)
+  - [🚀 Installation](#-installation)
+  - [⚙️ Configuration](#️-configuration)
+    - [Required Bot Permissions](#required-bot-permissions)
+    - [Required Gateway Intents](#required-gateway-intents)
+  - [🗄️ Database Setup](#️-database-setup)
+  - [💬 Commands](#-commands)
+    - [⚙️ Administration](#️-administration)
+    - [🎙️ Voice Channel Management](#️-voice-channel-management)
+    - [📊 General](#-general)
+  - [📁 Project Structure](#-project-structure)
+  - [🆘 Support](#-support)
+  - [📄 License](#-license)
 
 ---
 
@@ -146,6 +153,7 @@ CREATE TABLE temp_channels (
 |---|---|
 | `/setup` | Configure the bot for your server (trigger channel + category) |
 | `/reset` | Reset the bot configuration and delete all active temporary channels |
+| `/add` | Invite the bot to your server |
 
 ### 🎙️ Voice Channel Management
 > Must be used by the owner of a temporary voice channel.
