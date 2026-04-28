@@ -1,0 +1,29 @@
+{
+  "name": "tempvoc",
+  "version": "1.1.0",
+  "description": "A Discord bot to manage your temporary voice channels.",
+  "homepage": "https://github.com/neophitt/tempvoc#readme",
+  "bugs": {
+    "url": "https://github.com/neophitt/tempvoc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neophitt/tempvoc.git"
+  },
+  "license": "BSL-1.0",
+  "author": "neophitt",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "date-fns": "^4.1.0",
+    "discord.js": "^14.26.3",
+    "dotenv": "^17.4.2",
+    "fs": "^0.0.1-security",
+    "mysql2": "^3.22.3",
+    "path": "^0.12.7"
+  }
+}
