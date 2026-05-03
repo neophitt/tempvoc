@@ -26,7 +26,7 @@ module.exports = {
         try {
             if (!member.voice.channelId) {
                 return interaction.editReply({
-                    content: '`🙁` Tu dois être dans un salon vocal pour utiliser cette commande.',
+                    content: '<:warning:1500502804714754048> Tu dois être dans un salon vocal pour utiliser cette commande.',
                 });
             }
 
@@ -37,19 +37,19 @@ module.exports = {
 
             if (rows.length === 0) {
                 return interaction.editReply({
-                    content: '`🙁` Tu n\'es pas le propriétaire de ce salon vocal.',
+                    content: '<:warning:1500502804714754048> Tu n\'es pas le propriétaire de ce salon vocal.',
                 });
             }
 
             if (target.id === member.id) {
                 return interaction.editReply({
-                    content: '`🙁` Tu ne peux pas te transférer la propriété à toi-même.',
+                    content: '<:warning:1500502804714754048> Tu ne peux pas te transférer la propriété à toi-même.',
                 });
             }
 
             if (!target.voice.channelId || target.voice.channelId !== member.voice.channelId) {
                 return interaction.editReply({
-                    content: '`🙁` L\'utilisateur doit être dans ton salon vocal pour recevoir la propriété.',
+                    content: '<:warning:1500502804714754048> L\'utilisateur doit être dans ton salon vocal pour recevoir la propriété.',
                 });
             }
 
@@ -76,13 +76,13 @@ module.exports = {
 
             console.log(color.green(`[INFO ${time}] ${member.user.tag} transferred ownership of channel ${channel.id} to ${target.user.tag}`));
             return interaction.editReply({
-                content: `\`🔑\` La propriété du salon a été transférée à **${target.user.displayName}**.`,
+                content: `<:check:1500501456426373181> La propriété du salon a été transférée à **${target.user.displayName}**.`,
             });
 
         } catch (error) {
             console.error(color.red(`[ERROR ${time}] An error occurred in /transfer:`), error);
             return interaction.editReply({
-                content: '`🙁` Une erreur est survenue lors du transfert de propriété.',
+                content: '<:warning:1500502804714754048> Une erreur est survenue lors du transfert de propriété.',
             });
         }
     }

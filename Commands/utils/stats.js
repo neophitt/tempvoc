@@ -30,13 +30,13 @@ module.exports = {
             const apiLatency = Math.round(interaction.client.ws.ping);
 
             const embed = new EmbedBuilder()
-                .setTitle('📊 Statistiques du bot')
+                .setTitle('<:announce:1500503242415669479> Statistiques du bot')
                 .addFields(
-                    { name: '🌍 Serveurs', value: `> ${serverCount}`, inline: true },
-                    { name: '⚙️ Serveurs configurés', value: `> ${configuredServers[0].count}`, inline: true },
-                    { name: '🎙️ Salons actifs', value: `> ${activeChannels[0].count}`, inline: true },
-                    { name: '🏓 Latence bot', value: `> ${botLatency}ms`, inline: true },
-                    { name: '📡 Latence API', value: `> ${apiLatency}ms`, inline: true },
+                    { name: '<:dot:1500504398835482654> Serveurs', value: `> ${serverCount}`, inline: true },
+                    { name: '<:dot:1500504398835482654> Serveurs configurés', value: `> ${configuredServers[0].count}`, inline: true },
+                    { name: '<:dot:1500504398835482654> Salons actifs', value: `> ${activeChannels[0].count}`, inline: true },
+                    { name: '<:dot:1500504398835482654> Latence bot', value: `> ${botLatency}ms`, inline: true },
+                    { name: '<:dot:1500504398835482654> Latence API', value: `> ${apiLatency}ms`, inline: true },
                 )
                 .setColor(0xf9cb3d)
                 .setFooter({ text: `Demandé par ${interaction.user.displayName}`, iconURL: interaction.user.displayAvatarURL() })
@@ -47,7 +47,7 @@ module.exports = {
         } catch (error) {
             console.error(color.red(`[ERROR ${time}] An error occurred in /stats:`), error);
             return interaction.editReply({
-                content: '`🙁` Une erreur est survenue lors de la récupération des statistiques.',
+                content: '<:warning:1500502804714754048> Une erreur est survenue lors de la récupération des statistiques.',
             });
         }
     }

@@ -12,11 +12,11 @@ module.exports = {
         await interaction.deferReply({ flags: MessageFlags.Ephemeral });
 
         const embed = new EmbedBuilder()
-            .setTitle('➕ Ajouter TempVoc')
+            .setTitle('<:announce:1500503242415669479> Ajouter TempVoc')
             .setDescription('Clique sur le lien ci-dessous pour ajouter TempVoc à ton serveur !')
             .addFields(
-                { name: `🔗 Lien d\'invitation', value: '[Cliquer ici pour inviter le bot](${process.env.BOT_URL})` },
-                { name: `🆘 Support', value: '[Rejoindre le serveur de support](${process.env.SUPPORT_SERVER})` }
+                { name: `<:dot:1500504398835482654> Lien d\'invitation', value: '[Cliquer ici pour inviter le bot](${process.env.BOT_URL})` },
+                { name: `<:dot:1500504398835482654> Support', value: '[Rejoindre le serveur de support](${process.env.SUPPORT_SERVER})` }
             )
             .setColor(0x5865F2)
             .setFooter({ text: `Demandé par ${interaction.user.displayName}`, iconURL: interaction.user.displayAvatarURL() })

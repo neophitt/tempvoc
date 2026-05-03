@@ -26,7 +26,7 @@ module.exports = {
         try {
             if (!member.voice.channelId) {
                 return interaction.editReply({
-                    content: '`🙁` Tu dois être dans un salon vocal pour utiliser cette commande.',
+                    content: '<:warning:1500502804714754048> Tu dois être dans un salon vocal pour utiliser cette commande.',
                 });
             }
 
@@ -37,19 +37,19 @@ module.exports = {
 
             if (rows.length === 0) {
                 return interaction.editReply({
-                    content: '`🙁` Tu n\'es pas le propriétaire de ce salon vocal.',
+                    content: '<:warning:1500502804714754048> Tu n\'es pas le propriétaire de ce salon vocal.',
                 });
             }
 
             if (target.id === member.id) {
                 return interaction.editReply({
-                    content: '`🙁` Tu ne peux pas t\'inviter toi-même.',
+                    content: '<:warning:1500502804714754048> Tu ne peux pas t\'inviter toi-même.',
                 });
             }
 
             if (target.voice.channelId === member.voice.channelId) {
                 return interaction.editReply({
-                    content: `\`🙁\` **${target.user.displayName}** est déjà dans ton salon vocal.`,
+                    content: `<:warning:1500502804714754048> **${target.user.displayName}** est déjà dans ton salon vocal.`,
                 });
             }
 
@@ -58,7 +58,7 @@ module.exports = {
             const targetPerms = channel.permissionOverwrites.cache.get(target.id);
             if (targetPerms?.allow.has(PermissionFlagsBits.Connect)) {
                 return interaction.editReply({
-                    content: `\`🙁\` **${target.user.displayName}** a déjà été invité dans ton salon vocal.`,
+                    content: `<:warning:1500502804714754048> **${target.user.displayName}** a déjà été invité dans ton salon vocal.`,
                 });
             }
 
@@ -69,27 +69,27 @@ module.exports = {
 
             try {
                 await target.send({
-                    content: `\`📨\` **${member.user.displayName}** t'invite à rejoindre son salon vocal **${channel.name}** sur **${interaction.guild.name}** !`,
+                    content: `<:invited:1500502462459809802> **${member.user.displayName}** t'invite à rejoindre son salon vocal **${channel.name}** sur **${interaction.guild.name}** !`,
                 });
 
                 return interaction.editReply({
-                    content: `\`📨\` **${target.user.displayName}** a été invité dans ton salon vocal et a reçu une notification en DM.`,
+                    content: `<:invited:1500502462459809802> **${target.user.displayName}** a été invité dans ton salon vocal et a reçu une notification en DM.`,
                 });
             } catch {
                 return interaction.editReply({
-                    content: `\`📨\` **${target.user.displayName}** a été invité dans ton salon vocal mais n'a pas pu être notifié (DMs désactivés).`,
+                    content: `<:invited:1500502462459809802> **${target.user.displayName}** a été invité dans ton salon vocal mais n'a pas pu être notifié (DMs désactivés).`,
                 });
             }
 
             console.log(color.green(`[INFO ${time}] ${member.user.tag} invited ${target.user.tag} to channel ${channel.id}`));
             return interaction.editReply({
-                content: `\`📨\` **${target.user.displayName}** a été invité dans ton salon vocal.`,
+                content: `<:invited:1500502462459809802> **${target.user.displayName}** a été invité dans ton salon vocal.`,
             });
 
         } catch (error) {
             console.error(color.red(`[ERROR ${time}] An error occurred in /invite:`), error);
             return interaction.editReply({
-                content: '`🙁` Une erreur est survenue lors de l\'invitation.',
+                content: '<:warning:1500502804714754048> Une erreur est survenue lors de l\'invitation.',
             });
         }
     }

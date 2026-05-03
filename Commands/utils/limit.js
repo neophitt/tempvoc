@@ -28,7 +28,7 @@ module.exports = {
         try {
             if (!member.voice.channelId) {
                 return interaction.editReply({
-                    content: '`🙁` Tu dois être dans un salon vocal pour utiliser cette commande.',
+                    content: '<:warning:1500502804714754048> Tu dois être dans un salon vocal pour utiliser cette commande.',
                 });
             }
 
@@ -39,15 +39,15 @@ module.exports = {
 
             if (rows.length === 0) {
                 return interaction.editReply({
-                    content: '`🙁` Tu n\'es pas le propriétaire de ce salon vocal.',
+                    content: '<:warning:1500502804714754048> Tu n\'es pas le propriétaire de ce salon vocal.',
                 });
             }
 
             await member.voice.channel.setUserLimit(limit);
 
             const message = limit === 0
-                ? '`✅` La limite d\'utilisateurs a été supprimée.'
-                : `\`✅\` La limite a été définie à **${limit} utilisateur(s)**.`;
+                ? '<:check:1500501456426373181> La limite d\'utilisateurs a été supprimée.'
+                : `<:check:1500501456426373181> La limite a été définie à **${limit} utilisateur(s)**.`;
 
             console.log(color.green(`[INFO ${time}] ${member.user.tag} set limit to ${limit} in channel ${member.voice.channelId}`));
             return interaction.editReply({ content: message });
@@ -55,7 +55,7 @@ module.exports = {
         } catch (error) {
             console.error(color.red(`[ERROR ${time}] An error occurred in /limit:`), error);
             return interaction.editReply({
-                content: '`🙁` Une erreur est survenue lors de la modification de la limite.',
+                content: '<:warning:1500502804714754048> Une erreur est survenue lors de la modification de la limite.',
             });
         }
     }

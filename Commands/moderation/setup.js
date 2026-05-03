@@ -43,7 +43,7 @@ module.exports = {
 
             if (rows.length > 0) {
                 return interaction.editReply({
-                    content: "`🙁` Ce serveur est déjà configuré! Besoin de modifications? Utilisez la commande /reset afin de pouvoir utiliser à nouveau cette commande.",
+                    content: "<:warning:1500502804714754048> Ce serveur est déjà configuré! Besoin de modifications? Utilisez la commande /reset afin de pouvoir utiliser à nouveau cette commande.",
                 });
             }
 
@@ -54,13 +54,13 @@ module.exports = {
 
             console.log(color.green(`[INFO ${time}] A new server has been added to the database. (ID: ${serverId})`));
             await interaction.editReply({
-                content: '`🗃️` Le bot à bien été configuré pour fonctionner sur votre serveur!',
+                content: '<:check:1500501456426373181> Le bot à bien été configuré pour fonctionner sur votre serveur!',
             });
 
         } catch (error) {
             console.error(color.red(`[ERROR ${time}] An error occurred while configuring a server. (ID: ${serverId})`), error);
             await interaction.editReply({
-                content: '`🙁` Une erreur est survenue lors de la configuration.',
+                content: '<:warning:1500502804714754048> Une erreur est survenue lors de la configuration.',
             });
         }
     }

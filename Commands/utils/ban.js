@@ -26,7 +26,7 @@ module.exports = {
         try {
             if (!member.voice.channelId) {
                 return interaction.editReply({
-                    content: '`🙁` Tu dois être dans un salon vocal pour utiliser cette commande.',
+                    content: '<:warning:1500502804714754048> Tu dois être dans un salon vocal pour utiliser cette commande.',
                 });
             }
 
@@ -37,13 +37,13 @@ module.exports = {
 
             if (rows.length === 0) {
                 return interaction.editReply({
-                    content: '`🙁` Tu n\'es pas le propriétaire de ce salon vocal.',
+                    content: '<:warning:1500502804714754048> Tu n\'es pas le propriétaire de ce salon vocal.',
                 });
             }
 
             if (target.id === member.id) {
                 return interaction.editReply({
-                    content: '`🙁` Tu ne peux pas te bannir toi-même.',
+                    content: '<:warning:1500502804714754048> Tu ne peux pas te bannir toi-même.',
                 });
             }
 
@@ -52,7 +52,7 @@ module.exports = {
             const targetPerms = channel.permissionOverwrites.cache.get(target.id);
             if (targetPerms?.deny.has(PermissionFlagsBits.Connect)) {
                 return interaction.editReply({
-                    content: `\`🙁\` **${target.user.displayName}** est déjà banni de ton salon vocal.`,
+                    content: `<:warning:1500502804714754048> **${target.user.displayName}** est déjà banni de ton salon vocal.`,
                 });
             }
 
@@ -67,13 +67,13 @@ module.exports = {
 
             console.log(color.green(`[INFO ${time}] ${member.user.tag} banned ${target.user.tag} from channel ${channel.id}`));
             return interaction.editReply({
-                content: `\`🚫\` **${target.user.displayName}** a été banni de ton salon vocal.`,
+                content: `<:blocked:1500501525196312797> **${target.user.displayName}** a été banni de ton salon vocal.`,
             });
 
         } catch (error) {
             console.error(color.red(`[ERROR ${time}] An error occurred in /ban:`), error);
             return interaction.editReply({
-                content: '`🙁` Une erreur est survenue lors du bannissement.',
+                content: '<:warning:1500502804714754048> Une erreur est survenue lors du bannissement.',
             });
         }
     }

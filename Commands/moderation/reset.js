@@ -25,7 +25,7 @@ module.exports = {
 
             if (rows.length === 0) {
                 return interaction.editReply({
-                    content: '`🙁` Ce serveur n\'est pas encore configuré, utilise `/setup` pour commencer.',
+                    content: '<:warning:1500502804714754048> Ce serveur n\'est pas encore configuré, utilise `/setup` pour commencer.',
                 });
             }
 
@@ -45,13 +45,13 @@ module.exports = {
 
             console.log(color.yellow(`[INFO ${time}] Guild ${guild.id} configuration reset by ${interaction.user.tag}`));
             return interaction.editReply({
-                content: '`🔄` La configuration du bot a été réinitialisée. Utilise `/setup` pour reconfigurer le bot.',
+                content: '<:check:1500501456426373181> La configuration du bot a été réinitialisée. Utilise `/setup` pour reconfigurer le bot.',
             });
 
         } catch (error) {
             console.error(color.red(`[ERROR ${time}] An error occurred in /reset:`), error);
             return interaction.editReply({
-                content: '`🙁` Une erreur est survenue lors de la réinitialisation.',
+                content: '<:warning:1500502804714754048> Une erreur est survenue lors de la réinitialisation.',
             });
         }
     }

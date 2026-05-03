@@ -26,7 +26,7 @@ module.exports = {
         try {
             if (!member.voice.channelId) {
                 return interaction.editReply({
-                    content: '`🙁` Tu dois être dans un salon vocal pour utiliser cette commande.',
+                    content: '<:warning:1500502804714754048> Tu dois être dans un salon vocal pour utiliser cette commande.',
                 });
             }
 
@@ -37,19 +37,19 @@ module.exports = {
 
             if (rows.length === 0) {
                 return interaction.editReply({
-                    content: '`🙁` Tu n\'es pas le propriétaire de ce salon vocal.',
+                    content: '<:warning:1500502804714754048> Tu n\'es pas le propriétaire de ce salon vocal.',
                 });
             }
 
             if (!target.voice.channelId || target.voice.channelId !== member.voice.channelId) {
                 return interaction.editReply({
-                    content: '`🙁` Cet utilisateur n\'est pas dans ton salon vocal.',
+                    content: '<:warning:1500502804714754048> Cet utilisateur n\'est pas dans ton salon vocal.',
                 });
             }
 
             if (target.id === member.id) {
                 return interaction.editReply({
-                    content: '`🙁` Tu ne peux pas t\'expulser toi-même.',
+                    content: '<:warning:1500502804714754048> Tu ne peux pas t\'expulser toi-même.',
                 });
             }
 
@@ -57,13 +57,13 @@ module.exports = {
 
             console.log(color.green(`[INFO ${time}] ${member.user.tag} kicked ${target.user.tag} from channel ${member.voice.channelId}`));
             return interaction.editReply({
-                content: `\`👢\` **${target.user.displayName}** a été expulsé de ton salon vocal.`,
+                content: `<:removed:1500501853740204062> **${target.user.displayName}** a été expulsé de ton salon vocal.`,
             });
 
         } catch (error) {
             console.error(color.red(`[ERROR ${time}] An error occurred in /kick:`), error);
             return interaction.editReply({
-                content: '`🙁` Une erreur est survenue lors de l\'expulsion.',
+                content: '<:warning:1500502804714754048> Une erreur est survenue lors de l\'expulsion.',
             });
         }
     }

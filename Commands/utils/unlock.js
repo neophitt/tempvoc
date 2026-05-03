@@ -19,7 +19,7 @@ module.exports = {
         try {
             if (!member.voice.channelId) {
                 return interaction.editReply({
-                    content: '`🙁` Tu dois être dans un salon vocal pour utiliser cette commande.',
+                    content: '<:warning:1500502804714754048> Tu dois être dans un salon vocal pour utiliser cette commande.',
                 });
             }
 
@@ -30,7 +30,7 @@ module.exports = {
 
             if (rows.length === 0) {
                 return interaction.editReply({
-                    content: '`🙁` Tu n\'es pas le propriétaire de ce salon vocal.',
+                    content: '<:warning:1500502804714754048> Tu n\'es pas le propriétaire de ce salon vocal.',
                 });
             }
 
@@ -39,7 +39,7 @@ module.exports = {
             const everyonePerms = channel.permissionOverwrites.cache.get(interaction.guild.id);
             if (!everyonePerms?.deny.has(PermissionFlagsBits.Connect)) {
                 return interaction.editReply({
-                    content: '`🙁` Ton salon est déjà déverrouillé.',
+                    content: '<:warning:1500502804714754048> Ton salon est déjà déverrouillé.',
                 });
             }
 
@@ -49,13 +49,13 @@ module.exports = {
 
             console.log(color.green(`[INFO ${time}] ${member.user.tag} unlocked channel ${channel.id}`));
             return interaction.editReply({
-                content: '`🔓` Ton salon vocal a été déverrouillé.',
+                content: '<:unlocked:1500501930265411765> Ton salon vocal a été déverrouillé.',
             });
 
         } catch (error) {
             console.error(color.red(`[ERROR ${time}] An error occurred in /unlock:`), error);
             return interaction.editReply({
-                content: '`🙁` Une erreur est survenue lors du déverrouillage du salon.',
+                content: '<:warning:1500502804714754048> Une erreur est survenue lors du déverrouillage du salon.',
             });
         }
     }

@@ -19,7 +19,7 @@ module.exports = {
         try {
             if (!member.voice.channelId) {
                 return interaction.editReply({
-                    content: '`🙁` Tu dois être dans un salon vocal pour utiliser cette commande.',
+                    content: '<:warning:1500502804714754048> Tu dois être dans un salon vocal pour utiliser cette commande.',
                 });
             }
 
@@ -30,7 +30,7 @@ module.exports = {
 
             if (rows.length === 0) {
                 return interaction.editReply({
-                    content: '`🙁` Ce salon n\'est pas un salon vocal temporaire.',
+                    content: '<:warning:1500502804714754048> Ce salon n\'est pas un salon vocal temporaire.',
                 });
             }
 
@@ -38,7 +38,7 @@ module.exports = {
 
             if (owner_id === member.id) {
                 return interaction.editReply({
-                    content: '`🙁` Tu es déjà le propriétaire de ce salon vocal.',
+                    content: '<:warning:1500502804714754048> Tu es déjà le propriétaire de ce salon vocal.',
                 });
             }
 
@@ -47,7 +47,7 @@ module.exports = {
             const ownerInChannel = channel.members.has(owner_id);
             if (ownerInChannel) {
                 return interaction.editReply({
-                    content: '`🙁` Le propriétaire est toujours dans le salon, tu ne peux pas claim le salon.',
+                    content: '<:warning:1500502804714754048> Le propriétaire est toujours dans le salon, tu ne peux pas claim le salon.',
                 });
             }
 
@@ -74,13 +74,13 @@ module.exports = {
 
             console.log(color.green(`[INFO ${time}] ${member.user.tag} claimed ownership of channel ${channel.id}`));
             return interaction.editReply({
-                content: '`🔑` Tu es maintenant le propriétaire de ce salon vocal !',
+                content: '<:check:1500501456426373181> Tu es maintenant le propriétaire de ce salon vocal !',
             });
 
         } catch (error) {
             console.error(color.red(`[ERROR ${time}] An error occurred in /claim:`), error);
             return interaction.editReply({
-                content: '`🙁` Une erreur est survenue lors de la récupération de la propriété.',
+                content: '<:warning:1500502804714754048> Une erreur est survenue lors de la récupération de la propriété.',
             });
         }
     }

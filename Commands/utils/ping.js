@@ -24,7 +24,7 @@ module.exports = {
         const apiPing = Math.round(interaction.client.ws.ping);
 
         await interaction.editReply({ // Modifier le message précédent avec les valeurs de ping
-            content: `\`📡\` **Pong !** \n└─ Latence bot :\`${botPing}\`ms`
+            content: `<:announce:1500503242415669479> **Pong !** \n└─ Latence bot :\`${botPing}\`ms`
         });
     },
 };

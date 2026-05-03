@@ -27,7 +27,7 @@ module.exports = {
             console.error(color.red(`[ERROR ${time}] An error occured during execution of ${interaction.commandName} command: `, error));
 
             const errorMessage = {
-                content: "`🙁` Une erreur est survenue lors de l'exécution de la demande.",
+                content: "<:warning:1500502804714754048> Une erreur est survenue lors de l'exécution de la demande.",
                 flags: MessageFlags.Ephemeral
             }
 
